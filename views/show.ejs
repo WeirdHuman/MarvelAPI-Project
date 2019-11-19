@@ -1,0 +1,45 @@
+<%include partials/header.ejs %>
+<div class="logo2">
+<h1> MARVEL Universe</h1>
+<br>
+<br>
+<a href="/">Back</a>
+</div>
+<div class="background">
+<div class="space"></div>
+<div class="container">
+    <img src="<%=apiData.data.results[0].thumbnail.path + "/" + "portrait_uncanny" + "." + apiData.data.results[0].thumbnail.extension%>">
+    <div class="textContainer">
+        <h1><%=apiData.data.results[0].name%></h1>
+        <p><%=apiData.data.results[0].description%></p>
+        <h5><%=apiData.attributionText%></h5>
+    </div>
+</div>
+<h1 class="comics">Comics Fronts</h1>
+<div class="flexContainer">
+<%comicsWithImage.forEach(function(data){%>
+<div class="flexItem">
+    <div class="flipCardInner">
+        <div class="flipCardFront">
+            <img src="<%=data.thumbnail.path + "/" + "portrait_uncanny" + "." + data.thumbnail.extension%>">
+        </div>
+        <div class="flipCardBack">
+            <h3><%=data.title%></h3>
+            <p><%=data.description.substring(0,139)%> .......</p>
+            <p><a href="#">GO Comics</a></p>
+        </div>
+    </div>
+</div>
+<%})%>
+</div>
+</div>
+<%include partials/footer.ejs %>
+
+
+
+
+
+
+
+
+

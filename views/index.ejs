@@ -1,0 +1,27 @@
+<%include partials/header.ejs %>
+<div class="logo">
+<h1>MARVEL</h1>
+</div>
+<div class="navContainer">
+<h3 class="explore">EXPLORE</h3>
+<form action="/" method="POST">
+<input type="text" name="hero" placeholder="Hero">
+<button>GO HERO</button>
+</form>
+</div>
+<div class=background>
+        <div class="imageFront">
+                <img src="https://i.ibb.co/MntjVcq/cross-Over2-edit.jpg"></div>
+    <h1 class="featured">Featured Champions</h1>
+    <div class="flex-container">
+    <% frontAPI["data"]["results"].forEach(function(frontData){ %>
+    <div class="flex-item">
+        <ul>
+            <li><img src="<%=frontData.thumbnail.path + "/" + "portrait_uncanny" + "." + frontData.thumbnail.extension %>"></li>
+            <h3><%= frontData.name %></h3>
+        </ul>
+    </div>
+    <% }) %>
+</div>
+</div>
+<%include partials/footer.ejs %>

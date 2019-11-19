@@ -1,0 +1,353 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Main Page Style 
+------------------ */
+.logo{
+    text-align: center;
+    letter-spacing: 0.3em;
+    background-color: #1B6C8C;
+    color: white;
+    padding: 1em;
+}
+/* This is for fancy LOGO */
+.logo h1{
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+.logo h1:before{
+    content: "";
+    width: 0%;
+    height: 100%;
+    background: #1B6C8C;
+    position: absolute;
+    animation-name: text;
+    animation-duration: 5s;
+    top: 0;
+    left: 0;
+}
+@keyframes text{
+     0%
+     {
+        width: 100%;
+        z-index: 1;
+        border-right: 10px solid white;
+     }
+     50%
+     {
+        width: 0%;
+        z-index: 1;
+     }
+     51%{
+         width: 0%;
+         z-index: -1;
+     }
+     100%
+     {
+        width: 100%;
+        z-index: -1;
+        border-right: 10px solid white;
+     }
+ 
+}
+.logo2{
+    text-align: center;
+    font-weight: lighter;
+    letter-spacing: 0.3em;
+    background-color: #1B6C8C;
+    color: white;
+    padding: 1em;
+    padding-top: 2em;
+}
+
+.logo2 h1{
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+.logo2 h1:before{
+    content: "";
+    width: 0%;
+    height: 100%;
+    background: #1B6C8C;
+    position: absolute;
+    animation-name: text2;
+    animation-duration: 5s;
+    top: 0;
+    left: 0;
+}
+/*Prefer this method better than the first one */
+@keyframes text2{
+     0%
+     {
+        width: 100%;
+        z-index: 1;
+     }
+     50%
+     {
+        width: 0%;
+        z-index: 1;
+     }
+ 
+}
+
+.logo2 a{
+    text-decoration: none; 
+    color: white;
+}
+.logo2 a:hover{
+    color:black;
+}
+
+.explore{
+    letter-spacing: 0.5em;
+}
+
+.navContainer{
+    background-color: #1B6C8C;
+    display: flex;
+    flex-wrap: wrap;
+}
+.navContainer h3{
+    margin-left: 10em;
+    color: white;
+}
+.navContainer form{
+    margin-left: 50em;
+}
+
+.navContainer input{
+    font-size: 0.7em;
+}
+.imageFront{
+   padding-top: 2em;
+}
+.imageFront img{
+    max-width: 100%;
+    width: 80vw;
+    height: 80vh;
+    display: block;
+    margin: 0 auto; /* This centering trick is only work on block element*/
+    border: 10px solid #1B6C8C;
+    box-shadow: 0.5em 0.5em 1em 0.5rem rgba(0,0,0,0.2);
+}
+
+.featured{
+    text-align: center;
+    padding-top: 1em;
+    color: black;
+    overflow:hidden;
+}
+.featured:before, .featured:after{
+    background-color: #165973;
+    content: "";
+    display: inline-block;
+    height: 2px; /* This is for the thickness of the line  */
+    position: relative;
+    vertical-align: middle;
+    width: 10%; /*this line is for sizing the line */
+
+}
+.featured:before{
+    right: 0.5em;
+    margin-left: -50%;
+}
+.featured:after{
+    left: 0.5em;
+    margin-right: -50%;
+}
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2em;
+    padding-bottom: 5em;
+}
+.flex-container li{
+    list-style: none;
+}
+
+.flex-item{
+    display: flex;
+    flex: 25%;
+    margin-left: 5em;
+}
+
+.flex-item h3{
+    text-align: center;
+    font-weight: bold;
+    padding: 1em;
+}
+.flex-item ul{
+    border: 10px solid black;
+    box-shadow: 0.5em 0.5em 1em 0.5rem rgba(0,0,0,0.2)
+}
+.flex-item img{
+    max-width: 100%;
+    width: 100%;
+}
+
+.background{
+    background-color: #78A5AC;
+}
+
+
+/* Hero Page Style Top Section
+----------------- */
+.container{
+   display: flex;
+   border: 10px solid black;
+   justify-content: center;
+   max-width: 100%;
+   width: 70%;
+   margin: 0 auto;
+
+}
+.space{
+    padding-top: 3em;
+}
+.container img{
+    max-width: 100%;
+    width: 100%;
+    margin: 2em;
+    border: 10px solid black;
+}
+
+.textContainer{
+    text-align: center;
+    line-height: 2em;
+    margin-top: 10em;
+}
+.textContainer h1{
+    letter-spacing: 0.5em;
+    margin-bottom: 1em;
+}
+
+/* Hero Page Style Flip-card Section
+------------------------------------ */
+.flexContainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 5em;
+    margin-left: 10em;
+    padding-bottom: 4em;
+}
+.flexItem{
+    display: flex;
+    flex: 25%;
+    background-color: transparent;
+    width: 100%;
+    height: 360px;
+    perspective: 1000px;
+}
+.flexItem img{
+    max-width: 100%;
+    width: 100%;
+    border: 10px solid black;
+}
+.flipCardInner{
+    position: relative;
+    max-width: 100%;
+    width: 60%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    box-shadow: 0.5em 0.5em 1em 0.5rem rgba(0,0,0,0.2);
+
+}
+.flexItem:hover .flipCardInner{
+    transform: rotateY(-180deg);
+}
+.flipCardFront, .flipCardBack{
+    position: absolute;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+}
+.flipCardBack{
+    color: black;
+    transform: rotateY(-180deg);
+    padding: 2em;
+}
+.flipCardBack h3{
+    padding-top: 1em;
+}
+.flipCardBack p{
+    padding-top: 1em;
+    line-height: 1.5em;
+}
+.flipCardBack p a{
+    text-decoration: none;
+    border: 2px solid #63888D;
+    padding: 1em;
+    color: #2185AC;
+}
+.flipCardBack p a:hover{
+    color: #1D1F24;
+    border: 2px solid #2185AC
+}
+
+/* This style is for line next to text and this version is not included span */
+.comics{
+    text-align: center;
+    overflow: hidden;
+    margin-top: 2em;
+}
+.comics:before, .comics:after{
+ background-color: #165973;
+ content: "";
+ display: inline-block;
+ height: 2px; /* This is for the thickness of the line  */
+ position: relative;
+ vertical-align: middle;
+ width: 10%; /*this line is for sizing the line */
+}
+
+.comics:before{
+    right: 0.5em;
+    margin-left: -50%;
+}
+.comics:after{
+    left: 0.5em;
+    margin-right: -50%;
+}
+
+
+/* Another option for fancy heading this version included the span within text. 
+.comics{
+    text-align: center;
+    line-height: 0.5;
+    margin-top: 2em;
+}
+.comics span{
+    display: inline-block;
+    position: relative;
+}
+
+.comics span:before, .comics span:after{
+    content: "";
+    position: absolute;
+    height: 10px;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    top: 0;
+    width: 100%;
+}
+
+.comics span:before{
+    right: 100%;
+    margin-right: 15px;
+}
+.comics span:after{
+    left: 100%;
+    margin-left: 15px;
+}
+*/
