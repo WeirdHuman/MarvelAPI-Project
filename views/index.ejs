@@ -1,6 +1,6 @@
 <%include partials/header.ejs %>
 <div class="logo">
-<h1>MARVEL</h1>
+<h1>MARVEL Universe</h1>
 </div>
 <div class="navContainer">
 <h3 class="explore">EXPLORE</h3>
@@ -10,18 +10,65 @@
 </form>
 </div>
 <div class=background>
-        <div class="imageFront">
-                <img src="https://i.ibb.co/MntjVcq/cross-Over2-edit.jpg"></div>
-    <h1 class="featured">Featured Champions</h1>
-    <div class="flex-container">
-    <% frontAPI["data"]["results"].forEach(function(frontData){ %>
-    <div class="flex-item">
-        <ul>
-            <li><img src="<%=frontData.thumbnail.path + "/" + "portrait_uncanny" + "." + frontData.thumbnail.extension %>"></li>
-            <h3><%= frontData.name %></h3>
-        </ul>
+        <div class="grid-container">
+            <div class="grid-item item1">
+                <a href="#"><img src="https://i.ibb.co/zX0HXQz/Edit1.png"></a>
+            </div>
+            <div class="grid-item item2">
+                <a href="#"><img src="https://i.ibb.co/n6vw3jg/Edit2.png"></a>
+            </div>
+        </div>
+    <section id="mid-section">
+    <h1 class="featured">Feature</h1>
+    <div class="grid-container2">
+        <div class="grid-item2 grid1">
+            <a href="#">
+            <img src="https://i.ibb.co/sq7Dy0w/marvel-Gif.gif">
+            <h3>Comics Of The Year</h3>
+            </a>
+        </div>
+        <div class="grid-item2 grid2">
+            <a href="#">
+            <img src="https://i.ibb.co/vsz89Xm/who.png">
+            <h3>Who Versus Who - Friday at 4:20 PM on meTV</h3>
+            </a>
+        </div>
+        <div class="grid-item2 grid3">
+            <a href="#">
+            <img src="https://i.ibb.co/0n2Vbwv/Deadpoll.gif">
+            <h3>SPECIAL - Now Premiere - Ticket for Shows</h3>
+            </a>
+        </div>
+        <div class="grid-item2 grid4">
+            <img src="https://i.ibb.co/b7Lq3TS/Edit-Spider.png">
+        </div>
+        <div class="text">
+        <h1>Catch <span>Me</span></h1>
+        <p><a href="#">Full Story Here</a></p>
+        </div>
     </div>
-    <% }) %>
-</div>
-</div>
+    </section>
+    
+    <section id="bottom-section"> 
+        <div class="who-hero">
+            <img src="https://i.ibb.co/mGZ0dQ9/Marvel-Edit.png">
+            <div class="text-hero">
+                <h1 class="text1">Who</h1>
+                <h1 class="text2">You</h1>
+                <h1 class="text3">With</h1>
+            </div>
+        </div>
+        <div class="flex-container">
+            <% characterWithImage.forEach(function(frontData){ %>
+            <div class="flex-item">
+                <ul>
+                    <li><img src="<%=frontData.thumbnail.path + "/" + "portrait_uncanny" + "." + frontData.thumbnail.extension %>"></li>
+                    <h3><%= frontData.name %></h3>
+                </ul>
+            </div>
+            <% }) %>
+        </div>
+        </div>
+    </section>
+
 <%include partials/footer.ejs %>

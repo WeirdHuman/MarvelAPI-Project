@@ -45,11 +45,24 @@ var Character = mongoose.model('Character', characterSchema);
 
 //Index and Create Page where form was included and the characters were showcase to the main page
 app.get('/', function(request,response){
-    var mainURL = "https://gateway.marvel.com/v1/public/characters?limit=3&ts=thor&apikey=PRIVATE"
+    var mainURL = "https://gateway.marvel.com/v1/public/characters?&ts=thor&apikey=a4562ef73659cb1fd0301da2ceb2f396&hash=71e2548d2c1f0336567ee9bb43e4a886"
     Request(mainURL)
     .then((body)=>{
-        var frontAPI = JSON.parse(body)
-        response.render('index.ejs', {frontAPI:frontAPI})
+        var frontAPI = JSON.parse(body);
+        var characterList = frontAPI.data.results
+        var characterWithImage = [];
+        var counter = 0;
+        for(var x = 0; x < characterList.length; x++){
+            var imageLocation = characterList[x].thumbnail.path;
+            if(imageLocation.includes("image_not_available") !== true){
+                characterWithImage.push(characterList[x]);
+                counter ++
+            }
+            if(counter == 6){
+                break;
+            }
+        }
+        response.render('index.ejs', {characterWithImage:characterWithImage})
     })
     .catch((error)=>{
         console.log(error)
@@ -59,12 +72,12 @@ app.get('/', function(request,response){
 //SHOW Page where the searched character was shown with its comics and images.
 app.post('/',function(request,response){
     var characterData = request.body.hero
-    var url = "https://gateway.marvel.com/v1/public/characters?name=" + characterData + "&ts=thor&apikey=PRIVATE";
+    var url = "https://gateway.marvel.com/v1/public/characters?name=" + characterData + "&ts=thor&apikey=a4562ef73659cb1fd0301da2ceb2f396&hash=71e2548d2c1f0336567ee9bb43e4a886";
     Request(url)
     .then((body)=>{
         var apiData = JSON.parse(body)
         var characterID = apiData.data.results[0].id
-        var comicsURL = "https://gateway.marvel.com/v1/public/characters/" + characterID + "/comics?&ts=thor&apikey=PRIVATE";
+        var comicsURL = "https://gateway.marvel.com/v1/public/characters/" + characterID + "/comics?&ts=thor&apikey=a4562ef73659cb1fd0301da2ceb2f396&hash=71e2548d2c1f0336567ee9bb43e4a886";
         Request(comicsURL)
         .then((body)=>{
             var comicsData = JSON.parse(body);
