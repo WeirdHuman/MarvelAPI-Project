@@ -2,7 +2,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var Request = require('request-promise');
 var mongoose = require('mongoose'); //optional
-var app = express()
+var app = express();
+require('dotenv').config();
 
 mongoose.connect('mongodb://localhost/marvelAPI', { useNewUrlParser: true , useUnifiedTopology: true, useFindAndModify: false});
 app.use(express.static(__dirname + '/public'));
@@ -42,10 +43,10 @@ var characterSchema = new Schema({
 var Character = mongoose.model('Character', characterSchema);
 */
 
-
+var api_key = process.env.KEY;
 //Index and Create Page where form was included and the characters were showcase to the main page
 app.get('/', function(request,response){
-    var mainURL = "https://gateway.marvel.com/v1/public/characters?&ts=thor&apikey=PRIVATE"
+    var mainURL = `https://gateway.marvel.com/v1/public/characters?&ts=thor&apikey=${api_key}`
     Request(mainURL)
     .then((body)=>{
         var frontAPI = JSON.parse(body);
@@ -72,12 +73,12 @@ app.get('/', function(request,response){
 //SHOW Page where the searched character was shown with its comics and images.
 app.post('/',function(request,response){
     var characterData = request.body.hero
-    var url = "https://gateway.marvel.com/v1/public/characters?name=" + characterData + "&ts=thor&apikey=PRIVATE";
+    var url = "https://gateway.marvel.com/v1/public/characters?name=" + characterData + "&ts=thor&apikey=" + api_key;
     Request(url)
     .then((body)=>{
         var apiData = JSON.parse(body)
         var characterID = apiData.data.results[0].id
-        var comicsURL = "https://gateway.marvel.com/v1/public/characters/" + characterID + "/comics?&ts=thor&apikey=PRIVATE";
+        var comicsURL = "https://gateway.marvel.com/v1/public/characters/" + characterID + "/comics?&ts=thor&apikey=" + api_key;
         Request(comicsURL)
         .then((body)=>{
             var comicsData = JSON.parse(body);
