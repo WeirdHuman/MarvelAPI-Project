@@ -47,7 +47,7 @@ var api_key = process.env.KEY;
 var hash = process.env.SERECT;
 //Index and Create Page where form was included and the characters were showcase to the main page
 app.get('/', function(request,response){
-    var mainURL = "https://gateway.marvel.com/v1/public/characters?&ts=thor&apikey=" + api_key + hash;
+    var mainURL = "https://gateway.marvel.com/v1/public/characters?&ts=thor&apikey=" + api_key + "&hash=" + hash;
     Request(mainURL)
     .then((body)=>{
         var frontAPI = JSON.parse(body);
@@ -74,12 +74,12 @@ app.get('/', function(request,response){
 //SHOW Page where the searched character was shown with its comics and images.
 app.post('/',function(request,response){
     var characterData = request.body.hero
-    var url = "https://gateway.marvel.com/v1/public/characters?name=" + characterData + "&ts=thor&apikey=" + api_key + hash;
+    var url = "https://gateway.marvel.com/v1/public/characters?name=" + characterData + "&ts=thor&apikey=" + api_key + "&hash=" + hash;
     Request(url)
     .then((body)=>{
         var apiData = JSON.parse(body)
         var characterID = apiData.data.results[0].id
-        var comicsURL = "https://gateway.marvel.com/v1/public/characters/" + characterID + "/comics?&ts=thor&apikey=" + api_key + hash;
+        var comicsURL = "https://gateway.marvel.com/v1/public/characters/" + characterID + "/comics?&ts=thor&apikey=" + api_key + "&hash=" + hash;
         Request(comicsURL)
         .then((body)=>{
             var comicsData = JSON.parse(body);
