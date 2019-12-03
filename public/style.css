@@ -14,6 +14,10 @@
     color: black;
     padding: 1em;
 }
+.logo a{
+    text-decoration: none; 
+    color: black;
+}
 /* This is for fancy LOGO */
 .logo h1{
     display: inline-block;
@@ -100,9 +104,6 @@
     text-decoration: none; 
     color: black;
 }
-.logo2 a:hover{
-    color:black;
-}
 
 .explore{
     letter-spacing: 0.5em;
@@ -153,7 +154,7 @@
     height: 70vh;
 }
 .grid-item a:hover{
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .featured{
@@ -283,10 +284,13 @@
     flex: 13%;
     cursor: pointer;
 }
-.flex-item:hover{
+.flex-item a{
+    text-decoration: none;
+    color: black;
+}
+
+.flex-item a:hover{
     color: #2bc5a7;
-    transition: 0.5s ease-in;
-    transform: scaleY(0.9)
 }
 .flex-item h3{
     text-align: center;
@@ -427,16 +431,96 @@
     margin-right: -50%;
 }
 
+/* Character Page Styling
+------------------------- */
+.character-contents {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+.character-contents img{
+    max-width: 100%;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-left: 20em;
+}
+.character-name{
+    text-align: center;
+    line-height: 2em;
+    letter-spacing: 0.3em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: absolute;
+    left: 50%;
+    bottom: 60%;
+}
+.character-bio{
+    width: 66%;
+    line-height: 3em;
+    margin: 0 auto;
+    text-align: center;
+}
 
+/* Footer Section Styling
+------------------------ */
 
+.backgroundColor{
+    background-color: #2bc5a7;
+    height: 40vh;
+    text-align: center;
+}
+.backgroundText a{
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+}
+.backgroundText a:hover{
+    color: silver;
+}
 
+.backgroundText{
+    padding-top: 2em;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 3em;
+}
+.media-icon{
+    text-align:center;
+}
+.media-icon a{
+    text-decoration: none;
+    font-size: 2.5em;
+    color: white;
+    padding: 0.5em;
+}
+.media-icon a:hover{
+    color: silver;
+}
 
-
-
-
-
-
-
+/* Error Page Styling
+--------------------- */
+.error{
+    background-color: #2bc5a7;
+}
+.errorContent{
+    text-align: center;
+    margin-top: 4em;
+}
+.errorText{
+    line-height: 2em;
+    font-size: 2em;
+}
+.errorText a{
+    text-decoration: none;
+    color: black;
+}
+.errorText a:hover{
+    color: silver;
+}
+.errorContent img{ 
+    max-width: 100%;
+    width: 650px;
+    height: 550px;
+}
 
 
 

@@ -1,52 +1,21 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var Request = require('request-promise');
-var mongoose = require('mongoose'); //optional
-var app = express();
+var server = express();
 require('dotenv').config();
 
-mongoose.connect('mongodb://localhost/marvelAPI', { useNewUrlParser: true , useUnifiedTopology: true, useFindAndModify: false});
-app.use(express.static(__dirname + '/public'));
-app.use(bodyParser.urlencoded({ extended: true }));
-
-
-/* Originally, mongoose was used in order to save the character to the database. But this version does not involve working with database. 
-This version turn out to be getting the data from the API. Then manipulating them into their own varibles and pass them 
-to the show page.
-//Mongoose model set up for Thumbnail > path, and extension
-var Schema = mongoose.Schema;
-var thumbnailSchema = new Schema({
-    path: "String",
-    extension: "String"
-});
-var thumbnailPath = mongoose.model('thumbnailPath', thumbnailSchema);
-
-
-//Mongoose model set up for Comics
-var Schema = mongoose.Schema;
-var comicsSchema = new Schema({
-    title: "String",
-    path : "String",
-    extension: "String"
-});
-var Comics = mongoose.model('Comics', comicsSchema);
-
-//Mongoose model set up for Character
-var Schema = mongoose.Schema;
-var characterSchema = new Schema({
-    id: "Number",
-    name: "String",
-    description: "String",
-    imagePath: [thumbnailSchema],
-    comicsPath: [comicsSchema]
-});
-var Character = mongoose.model('Character', characterSchema);
-*/
-
+server.use(express.static(__dirname + '/public'));
+server.use(bodyParser.urlencoded({ extended: true }));
 var api_key = process.env.KEY;
 var hash = process.env.SERECT;
-//Index and Create Page where form was included and the characters were showcase to the main page
-app.get('/', function(request,response){
+
+//ALL The Routes start Here.
+//Index and Create Page where form is included and the characters from the API are showcase to the main page.
+server.get('/',function(request, response){
+    response.redirect('/hero')
+})
+
+server.get('/hero', function(request,response){
     var mainURL = "https://gateway.marvel.com/v1/public/characters?&ts=thor&apikey=" + api_key + "&hash=" + hash;
     Request(mainURL)
     .then((body)=>{
@@ -67,12 +36,12 @@ app.get('/', function(request,response){
         response.render('index.ejs', {characterWithImage:characterWithImage})
     })
     .catch((error)=>{
-        console.log(error)
-    })
-})
+    console.log(error)
+        })
+});
 
-//SHOW Page where the searched character was shown with its comics and images.
-app.post('/',function(request,response){
+//SHOW Page where the searched character is shown with its comics and images.
+server.post('/hero',function(request,response){
     var characterData = request.body.hero
     var url = "https://gateway.marvel.com/v1/public/characters?name=" + characterData + "&ts=thor&apikey=" + api_key + "&hash=" + hash;
     Request(url)
@@ -102,14 +71,31 @@ app.post('/',function(request,response){
         })
     })
     .catch((error)=>{
-        console.log(error)
+        response.render('error.ejs')
     })
 })
 
 
+//Pages for individual characters......
+server.get('/hero/3DMan',function(request, response){
+    response.render('Man.ejs')
+})
+server.get('/hero/ABomb',function(request, response){
+    response.render('ABomb.ejs')
+})
+server.get('/hero/AIM',function(request, response){
+    response.render('AIM.ejs')
+})
+server.get('/hero/Emil',function(request, response){
+    response.render('Emil.ejs')
+})
+server.get('/hero/Absorbing',function(request, response){
+    response.render('Absorbing.ejs')
+})
+server.get('/hero/Abyss',function(request, response){
+    response.render('Abyss.ejs')
+})
 
-
-
-app.listen(process.env.PORT || 3000, ()=> {
-    console.log('Version3 Connected')
+server.listen(process.env.PORT || 3000, ()=> {
+    console.log('Version Connected')
 });

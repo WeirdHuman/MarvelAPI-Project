@@ -4,7 +4,7 @@
 </div>
 <div class="navContainer">
 <h3 class="explore">EXPLORE</h3>
-<form action="/" method="POST">
+<form action="/hero" method="POST">
 <input type="text" name="hero" placeholder="Hero">
 <button>GO HERO</button>
 </form>
@@ -59,16 +59,67 @@
             </div>
         </div>
         <div class="flex-container">
-            <% characterWithImage.forEach(function(frontData){ %>
             <div class="flex-item">
                 <ul>
-                    <li><img src="<%=frontData.thumbnail.path + "/" + "portrait_uncanny" + "." + frontData.thumbnail.extension %>"></li>
-                    <h3><%= frontData.name %></h3>
+                    <a href="/hero/3DMan">
+                    <li>
+                        <img src="https://i.ibb.co/B2HktxX/3-D.jpg">
+                    </li>
+                    <h3>3-D Man</h3>
+                    </a>
                 </ul>
             </div>
-            <% }) %>
-        </div>
+            <div class="flex-item">
+                <ul>
+                    <a href="/hero/ABomb">
+                    <li>
+                        <img src="https://i.ibb.co/zZndjSf/ABOM.jpg">
+                    </li>
+                    <h3>A-Bomb</h3>
+                    </a>
+                </ul>
+            </div>
+            <div class="flex-item">
+                <ul>
+                    <a href="/hero/AIM">
+                    <li>
+                        <img src="https://i.ibb.co/BTdHF2P/AIM.jpg">
+                    </li>
+                    <h3>A.I.M.</h3>
+                    </a>
+                </ul>
+            </div>
+            <div class="flex-item">
+                <ul>
+                    <a href="/hero/Emil">
+                    <li>
+                        <img src="https://i.ibb.co/NmRdFDM/Emil.jpg">
+                    </li>
+                    <h3>Emil Blonsky</h3>
+                    </a>
+                </ul>
+            </div>
+            <div class="flex-item">
+                <ul>
+                    <a href="/hero/Absorbing">
+                    <li>
+                        <img src="https://i.ibb.co/cYD65b2/Absorbing.jpg">
+                    </li>
+                    <h3>Absorbing Man</h3>
+                    </a>
+                </ul>
+            </div>
+            <div class="flex-item">
+                <ul>
+                    <a href="/hero/Abyss">
+                    <li>
+                        <img src="https://i.ibb.co/pf2Gz6g/Abyss.jpg">
+                    </li>
+                    <h3>Abyss</h3>
+                    </a>
+                </ul>
+            </div>
         </div>
     </section>
-
+</div>
 <%include partials/footer.ejs %>
