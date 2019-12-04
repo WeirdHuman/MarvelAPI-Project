@@ -96,6 +96,18 @@ server.get('/hero/Abyss',function(request, response){
     response.render('Abyss.ejs')
 })
 
+//Pages for the MID section.....
+server.get('/comics/special',function(request,response){
+    response.render('special.ejs')
+})
+server.get('/television/special',function(request,response){
+    response.render('mespecial.ejs')
+})
+server.get('/television/onair',function(request,response){
+    response.render('now.ejs')
+})
+
+
 server.listen(process.env.PORT || 3000, ()=> {
     console.log('Version Connected')
 });

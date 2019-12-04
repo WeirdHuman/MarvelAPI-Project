@@ -522,13 +522,52 @@
     height: 550px;
 }
 
-
-
-
-
-
-
-
+/* Special Space Styling
+------------------------ */
+.emptySpace{
+    padding-top: 4em;
+    position: relative;
+    padding-bottom: 4em;
+}
+.imageContainer img{
+    max-width: 100%;
+    width: 450px;
+    height: 550px;
+    margin-left: 3em;
+    border: 17px white solid;
+}
+.specialText{
+    line-height: 3em;
+    position: absolute;
+    left: 50%;
+    bottom: 15%;
+}
+.specialText span{
+    font-weight: lighter;
+}
+.shareWithFriend{
+    display: flex;
+    justify-content: space-between;
+    border: 10px solid white;
+    border-radius: 50px;
+    padding: 1em;
+    margin-right: 10em;
+}
+.flex{
+    display: flex;
+    margin-right: 3em;
+    letter-spacing: 2em;
+    font-size: 1.5em;
+}
+.flex a{
+    text-decoration: none;
+    color: black;
+}
+.flex a:hover{
+    color: #2bc5a7;
+    transition: 0.2s ease;
+    transform: scale(1.2);
+}
 
 
 
