@@ -570,6 +570,133 @@
 }
 
 
+/* Top Section Styling
+----------------------- */
+.title{
+    text-align: center;
+    padding-top: 2em;
+    font-size: 2em;
+    padding-bottom: 2em;
+}
+.title h1{
+    font-weight: lighter;
+}
+.imageSection{
+    text-align: center;
+    line-height: 5em;
+}
+.imageSection img{
+    max-width: 100%;
+    width: 90%;
+    height: 80vh;
+}
+.GRID{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 2em;
+}
+.GRIDitem{
+    display: grid;
+    line-height: 2em;
+    margin: 0 5em;
+    text-align: center;
+}
+.GRIDitem p{
+    letter-spacing: 0.1em;
+}
+.ThreeIcon{
+    text-align: center;
+    font-size: 2em;
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+.ThreeIcon a{
+    text-decoration: none;
+    color: black;
+    padding: 1em;
+}
+.ThreeIcon a:hover{
+    color: #2bc5a7;;
+}
+/* 2nd top Section */
+
+.Grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 80%;
+    margin: 0 auto;
+    grid-gap: 1em;
+}
+.Grid-Item img{
+    display: grid; 
+    max-width: 100%;
+    width: 100%;
+    height: 80vh;
+}
+.Item1{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+.Item2{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+.Item3{
+    grid-column: 1 / 3;
+    grid-row: 2 / 3 ;
+}
+.Item4{
+    grid-column: 1 / 2;
+    grid-row: 3  ;
+}
+.Item4{
+    grid-column: 2 / 3;
+    grid-row: 3 ;
+}
+
+/* Contest of Champion
+--------------------- */
+.gridContest{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 65%;
+    margin: 0 auto;
+    grid-gap: 1em;
+}
+.grid-Item img{
+    display: grid;
+    max-width: 100%;
+    width : 100%;
+    height: 80vh;
+}
+.ITEM1{
+    grid-column:1 / 3;
+    grid-row: 1;
+}
+
+.ITEM2{
+    grid-column: 1;
+    grid-row: 2;
+}
+.ITEM3{
+    grid-column: 2;
+    grid-row: 2;
+}
+.ITEM4{
+    grid-column: 1 / 3;
+    grid-row: 3;
+}
+
+
+
+
+
+
+
+
+
 
 
 

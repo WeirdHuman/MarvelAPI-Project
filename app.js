@@ -111,3 +111,11 @@ server.get('/television/onair',function(request,response){
 server.listen(process.env.PORT || 3000, ()=> {
     console.log('Version Connected')
 });
+
+//Pages for the Top Section
+server.get('/BlackWidow',function(request, response){
+    response.render('BlackWidow.ejs')
+})
+server.get('/BlackWidowShowcase',function(request, response){
+    response.render('BlackWidowShowcase.ejs')
+})
