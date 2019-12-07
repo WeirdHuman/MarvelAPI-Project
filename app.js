@@ -106,6 +106,9 @@ server.get('/television/special',function(request,response){
 server.get('/television/onair',function(request,response){
     response.render('now.ejs')
 })
+server.get('/catchme',function(request, response){
+    response.render('catchme.ejs')
+})
 
 
 server.listen(process.env.PORT || 3000, ()=> {

@@ -688,8 +688,47 @@
     grid-column: 1 / 3;
     grid-row: 3;
 }
+/* Now Premiere and catchme Styling
+-------------------------------- */
+.specialGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 
-
+.specialGridItem img{
+    display: grid;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+}
+.specialGridItem h1 {
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+.catchContent{
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+.catchGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.catchItem{
+    display: grid;
+}
+.catchItem img{
+    max-width: 100%;
+    width: 100%;
+}
+.CatchGridItem{
+    text-align: center;
+    padding-top: 4em;
+    line-height: 2em;
+    letter-spacing: 0.1em;
+}
 
 
 
