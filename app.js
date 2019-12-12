@@ -81,7 +81,7 @@ server.get('/hero/3DMan',function(request, response){
     response.render('Man.ejs')
 })
 server.get('/hero/ABomb',function(request, response){
-    response.render('ABomb.ejs')
+    response.render('Bomb.ejs')
 })
 server.get('/hero/AIM',function(request, response){
     response.render('AIM.ejs')
